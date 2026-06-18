@@ -1,0 +1,356 @@
+/* ─────────────────────────────────────────
+   Google Homepage Clone — style.css
+   Pixel-faithful recreation (UI only)
+───────────────────────────────────────── */
+
+/* ── RESET ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── BASE ── */
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: arial, sans-serif;
+  font-size: 14px;
+  color: #202124;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ─────────────────────────────────────────
+   TOP NAV BAR
+───────────────────────────────────────── */
+.top-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 16px 0;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.top-nav a {
+  font-size: 13px;
+  color: #202124;
+  padding: 8px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.top-nav a:hover {
+  background: #f1f3f4;
+  text-decoration: underline;
+}
+
+.top-nav .btn-signin {
+  background: #1a73e8;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 9px 23px;
+  border-radius: 4px;
+  margin-left: 8px;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+.top-nav .btn-signin:hover {
+  background: #1765cc;
+  box-shadow: 0 1px 3px rgba(0,0,0,.3);
+  text-decoration: none;
+}
+
+/* Apps grid icon (⠿) */
+.icon-apps {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.icon-apps:hover {
+  background: #f1f3f4;
+}
+
+.icon-apps svg {
+  width: 20px;
+  height: 20px;
+  fill: #5f6368;
+}
+
+/* ─────────────────────────────────────────
+   MAIN CONTENT (centre column)
+───────────────────────────────────────── */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 100px; /* visual centre offset, like real Google */
+}
+
+/* ── LOGO ── */
+.google-logo {
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.google-logo svg {
+  width: 272px;
+  height: 92px;
+}
+
+/* ── SEARCH BOX ── */
+.search-wrapper {
+  width: 100%;
+  max-width: 584px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 46px;
+  border: 1px solid #dfe1e5;
+  border-radius: 24px;
+  padding: 0 14px 0 16px;
+  background: #fff;
+  box-shadow: none;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.search-box:hover,
+.search-box:focus-within {
+  box-shadow: 0 1px 6px rgba(32,33,36,.28);
+  border-color: rgba(223,225,229,0);
+}
+
+/* Search icon (left) */
+.search-icon {
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.search-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: #9aa0a6;
+}
+
+/* Input */
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: arial, sans-serif;
+  font-size: 16px;
+  color: #202124;
+  background: transparent;
+  caret-color: #202124;
+  min-width: 0;
+}
+
+.search-input::placeholder {
+  color: transparent;
+}
+
+/* Right icons (mic + lens) */
+.search-right-icons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.search-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.search-icon-btn:hover {
+  background: #f1f3f4;
+}
+
+.search-icon-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Vertical divider between mic & lens */
+.icon-divider {
+  width: 1px;
+  height: 20px;
+  background: #dfe1e5;
+}
+
+/* ── BUTTONS ── */
+.search-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-search {
+  background: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  color: #3c4043;
+  font-family: arial, sans-serif;
+  font-size: 14px;
+  padding: 0 16px;
+  height: 36px;
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 54px;
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+.btn-search:hover {
+  background: #f1f3f4;
+  border-color: #dadce0;
+  box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  color: #202124;
+}
+
+.btn-search:focus-visible {
+  outline: 2px solid #1a73e8;
+  outline-offset: 2px;
+}
+
+/* ── LANGUAGE LINE ── */
+.language-line {
+  margin-top: 32px;
+  font-size: 13px;
+  color: #202124;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.language-line a {
+  color: #1558d6;
+  font-size: 13px;
+  margin-left: 4px;
+}
+
+.language-line a:hover {
+  text-decoration: underline;
+}
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+footer {
+  background: #f2f2f2;
+  flex-shrink: 0;
+}
+
+.footer-top {
+  border-bottom: 1px solid #dadce0;
+  padding: 13px 30px;
+  font-size: 15px;
+  color: #70757a;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  height: 48px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.footer-link {
+  font-size: 13px;
+  color: #70757a;
+  padding: 0 15px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: text-decoration 0.1s;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media (max-width: 600px) {
+  .top-nav a:not(.btn-signin):not(.icon-apps) {
+    display: none;
+  }
+
+  .google-logo svg {
+    width: 192px;
+    height: 64px;
+  }
+
+  .search-wrapper {
+    max-width: calc(100vw - 40px);
+  }
+
+  .footer-top {
+    text-align: center;
+  }
+
+  .footer-bottom {
+    justify-content: center;
+  }
+
+  .footer-left,
+  .footer-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+  }
+}
